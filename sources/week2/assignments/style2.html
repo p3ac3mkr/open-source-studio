@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylesheet2</title>
+</head>
+
+<style>
+    body{
+        background-color: #d14836;
+    }
+
+    .div_navtop{
+        color: white;
+        padding: 15px;
+        font-size: 27px;
+    }
+    .div_navtop h1{
+        margin: 0px;
+    }
+
+    .div_leftcontent{
+        float: right;
+        width: 190px;
+    }
+    ul{
+        list-style: none;
+        padding: 10px;
+    }
+    .div_leftcontent ul li{
+        border: 1px solid #d14836;
+        border-radius: 15px;
+        padding: 5px;
+        background-color: #d14836;
+        margin-bottom: 10px;
+        text-align: center;
+        color: white;
+    }
+    .div_leftcontent ul li.active{
+        font-weight: bold;
+        color: #d14836;
+        background-color: white;
+    }
+    .div_leftcontent a{
+        text-decoration: none;
+        color: white;
+    }
+
+    .div_centercontent h1{
+        color: #d14836;
+    }
+    .div_centercontent_a{
+        text-decoration: none;
+        color: #d14836;
+    }
+    .div_centercontent h2{
+        color: #d14836;
+    }
+    .div_centercontent{
+        padding: 10px;
+        background-color: white;
+    }
+
+    .div_rightcontent{
+        padding: 10px 10px 25px 10px;
+        margin: 0px 0px 10px 0px;
+        margin-bottom: 5px;
+        color: #d14836;
+        background-color: #F6DAD7;
+    }
+
+    .div_rightcontent h3{
+        margin: 0px;
+        padding: 15px 0px 15px 0px;
+    }
+
+    .div_footer{
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 80%;
+        color: white;
+    }
+    
+</style>
+
+<body>
+    <!-- top 공간 -->
+     <div class="div_navtop">
+        <h1>Welcome to Pyeongan Moon's Homepage (22200268)</h1>
+        <div class="div_navtop_content">Use the menu to select different Stylesheets</div>
+     </div>
+
+    <!-- 중간 콘텐츠 공간 -->
+     <div class="div_maincontent">
+        <div class="div_leftcontent">
+            <ul>
+                <li><a href="./style1.html">Stylesheet 1</a></li>
+                <li class="active"><a href="./style2.html" style="color: #d14836;">Stylesheet 2</a></li>
+                <li>Stylesheet 3</li>
+                <li>Stylesheet 4</li>
+                <li><a href="./index.html">No Stylesheet</a></li>
+            </ul>
+        </div>
+
+        <div class="div_centercontent">
+            <h1>Same Page Different Stylesheets</h1>
+            This is a demonstration of how different stylesheets can change the layout of your HTML page. You can change the layout of this page by selecting different stylesheets in the menu, or by selecting one of the following links:
+            <div>
+                <a class="div_centercontent_a" href="./style1.html">Stylesheet1</a>, 
+                <a class="div_centercontent_a" href="./style2.html">Stylesheet2</a>, 
+                <a class="div_centercontent_a" href="#">Stylesheet3</a>, 
+                <a class="div_centercontent_a" href="#">Stylesheet4</a>.
+            </div>
+
+            <h2>No Styles</h2>
+            This page uses DIV elements to group different sections of the HTML page. Click here to see how the page looks like with no stylesheet:
+            <br/>
+            <div>
+                <a class="div_centercontent_a" href="./index.html">No Stylesheet</a>.
+            </div>
+        </div>
+
+        <!-- 사이드 바 공간 -->
+        <div class="div_rightcontent">
+            <h3>Side-Bar</h3>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+        </div>
+     </div>
+
+    <!-- footer -->
+     <div class="div_footer">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+     </div>
+</body>
+</html>
