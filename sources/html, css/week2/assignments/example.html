@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumbotron example</title>
+</head>
+
+<style>
+    body{
+        background-color: rgba(3, 7, 9.9, 0.88);
+    }
+
+    .div_navtop{
+        color: white;
+        margin: 4% 7% 4% 7%;
+    }
+    .div_navtop h2{
+        font-weight: normal;
+    }
+    .div_navtop hr{
+        border: solid 0.5px rgba(200, 230, 255, 0.2);
+    }
+
+    .div_topcontent{
+        margin: 4% 7% 4% 7%;
+        padding: 10% 7% 7% 7%;
+        border-radius: 7px;
+        line-height: 160%;
+        color: white;
+        background-color: rgba(200, 230, 255, 0.05);
+    }
+    .div_topcontent h1{
+        margin: 3% 0% 3% 0%;
+    }
+    .div_topcontent button{
+        margin: 3% 0% 0% 0%;
+        padding: 11px;
+        border-radius: 7px;
+        border-style: hidden;
+        color: white;
+        background-color: #0D6EFD;
+    }
+
+    .div_bottomcontent{
+        display: flex;
+        color: white;
+        margin: 4% 7% 4% 7%;
+        line-height: 160%;
+    }
+    .div_botleftcontent{
+        padding: 8% 7% 7% 7%;
+    }
+    .div_botleftcontent h2{
+        margin: 3% 0% 3% 0%;
+    }
+    .div_botleftcontent button{
+        margin: 3% 0% 0% 0%;
+        padding: 11px;
+        border-radius: 7px;
+        border-style: solid;
+        border-color: white;
+        color: white;
+        background-color: rgba(3, 7, 9.9, 0.1);
+    }
+    .div_botrightcontent{
+        padding: 8% 7% 7% 7%;
+        border-radius: 7px;
+        border-style: solid;
+        border-color: rgba(200, 230, 255, 0.05);
+        background-color: rgba(200, 230, 255, 0.05);
+    }
+    .div_botrightcontent h2{
+        margin: 3% 0% 3% 0%;
+    }
+    .div_botrightcontent button{
+        margin: 3% 0% 0% 0%;
+        padding: 11px;
+        border-radius: 7px;
+        border-style: solid;
+        border-color: rgba(200, 230, 255, 0.05);
+        color: rgba(200, 230, 255, 0.20);
+        background-color: rgba(200, 230, 255, 0.05);
+    }
+
+    .div_footer{
+        color: rgba(200, 230, 255, 0.2);;
+        margin: 3% 7% 0% 7%;
+    }
+    .div_footer hr{
+        margin-bottom: 3%;
+        border: solid 0.5px rgba(200, 230, 255, 0.2);
+    }
+</style>
+
+<body>
+    <div class="div_navtop">
+        <h2>Jumbotron example</h2>
+        <hr/>
+    </div>
+
+    <div class="div_topcontent">
+        <h1>Custom jumbotron</h1>
+        Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.
+        <br/>
+        <button class="button_topbutton">Example button</button>
+    </div>
+
+
+    <div class="div_bottomcontent">
+        <div class="div_botleftcontent">
+            <h2>Change the background</h2>
+            Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron look. Then, mix and match with additional component themes and more.
+            <br/>
+            <button class="button_botleftbutton">Example button</button>
+        </div>
+    
+        <div class="div_botrightcontent">
+            <h2>Add borders</h2>
+            Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.
+            <br/>
+            <button class="button_botrightbutton">Example button</button>
+        </div>
+    </div>
+
+    <div class="div_footer">
+        <hr/>
+        2025
+    </div>
+
+</body>
+</html>
