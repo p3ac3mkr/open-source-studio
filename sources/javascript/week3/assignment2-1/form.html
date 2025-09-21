@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list generator</title>
+</head>
+
+<style>
+    h1{
+        text-align: center;
+        padding: 3%;
+    }
+
+    .div_contents{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .div_innercontents{
+        display: flex;
+        gap: 5px;
+    }
+
+    .div_contents_input{
+        flex-direction: row;
+    }
+    .div_contents_submit{
+        flex-direction: row;
+    }
+
+    .div_list{
+        margin: 0px;
+        padding-left: 0px;
+    }
+
+    
+</style>
+
+<body>
+    <h1>Dynamic Web page</h1>
+
+    <div class="div_contents">
+        <form id="generator" action="./form.html" method="get">
+            <div class="div_innercontents">
+                <div class="div_contents_input">
+                    <input type="text" id="input" name="input" placeholder="요소를 입력하세요: "/>
+                </div>
+                <div class="div_contents_submit">
+                    <input type="submit" value="추가"/>
+                    <input type="reset" value="삭제"/>
+                </div>
+            </div>
+        </form>
+
+        <div class="div_list">
+            <ul id="generated_list"></ul>
+        </div>
+    </div>
+</body>
+
+<script>
+    window.onload = function(){
+        const form = document.getElementById('generator');
+        const input = document.getElementById('input');
+        const ul = document.getElementById('generated_list');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const l_element = input.value.trim();
+            const li = document.createElement('li');
+
+            li.textContent = l_element;
+            ul.appendChild(li);
+
+            form.reset();
+            input.focus();
+        });
+    }
+</script>
+</html>

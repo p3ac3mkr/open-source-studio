@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form style</title>
+</head>
+
+<style>
+    body{
+        background-color: rgba(0, 0, 0, 0.03);
+    }
+    .div_top{
+        text-align: center;
+        margin: 3%;
+    }
+    
+    .cart{
+        margin: 0% 0% 0% 3%;
+        float: right;
+        width: 35%;
+    }
+    .cart_name{
+        display: grid;
+        margin: 0px;
+        padding: 0px;
+    }
+    .cart_h3_name{
+        color: blue;
+    }
+    .cart_h3_number{
+        grid-column: 2;
+        justify-self: end;
+        margin-bottom: 0;
+        border: solid ;
+        border-radius: 10px;
+        padding: 2% 4% 1% 4%;
+        background-color: blue;
+        color: white;
+    }
+    .cart ul{
+        margin: 0px;
+        padding: 1%;
+    }
+    .cart li{
+        display: grid;
+        margin: 0px;
+        border: solid 1px;
+        border-radius: 5px;
+        list-style: none;
+        padding: 1%;
+        border-color: lightgray;
+    }
+    .cart li.active{
+        background-color: lightgray;
+        color: green;
+    }
+    .li_name{
+        font-size: large;
+        font-weight: bold;
+    }
+    .li_charge{
+        grid-column: 2;
+        justify-self: end;
+        white-space: nowrap;
+        text-align: right;
+    }
+    .cart_promocode{
+        border: solid 1px;
+        border-radius: 5px;
+        border-color: lightgray;
+        padding: 1%;
+        margin: 1%;
+    }
+    .cart_promocode input{
+        border: solid;
+        border-color: lightgray;
+        border-radius: 5px;
+        width: 74%;
+        margin: 0px;
+    }
+    .cart_promocode button{
+        margin: 0px;
+        border: solid;
+        border-color: gray;
+        background-color: gray;
+        border-radius: 5px;
+        color: white;
+    }
+
+    .address{
+        display: grid;
+        width: 60%;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 12px 16px;
+    }
+    .address h3{
+        grid-column: 1/-1;
+    }
+    .address_field{
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+    .address_field input, .address_field select{
+        padding: 10px 12px;
+        border: solid 1px;
+        border-radius: 5px;
+        border-color: lightgray;
+        box-sizing: border-box;
+    }
+    .address_check{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .col-12{grid-column: span 12;}
+    .col-6{grid-column: span 6;}
+    .col-5{grid-column: span 5;}
+    .col-4{grid-column: span 4;}
+    .col-3{grid-column: span 3;}
+
+    .payment{
+        display: grid;
+        width: 60%;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 12px 16px;
+    }
+    .payment h3{
+        grid-column: 1/-1;
+    }
+    .payment_radio{
+        grid-column: span 12;
+    }
+    .payment_field{
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+    .payment_field span{
+        color: gray;
+    }
+    .payment_field input{
+        padding: 10px 12px;
+        border: solid 1px;
+        border-color: lightgray;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    .col-6{grid-column: span 6;}
+    .col-3{grid-column: span 3;}
+    hr{
+        width: 60%;
+        margin: 3% 0;
+    }
+
+    textarea{
+        width: 60%;
+        height: 20%;
+        border-radius: 5px;
+        border-color: lightgray;
+    }
+
+    #continue{
+        width: 60%;
+        border: solid 1px;
+        border-radius: 10px;
+        border-color: blue;
+        padding: 1% 2%;
+        background-color: blue;
+        font-size: 23px;
+        color: white;
+    }
+
+    .footer{
+        text-align: center;
+        padding: 5%;
+
+    }
+</style>
+
+<body>
+    <div class="div_top">
+        <h2>Checkout form</h2>
+        Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.
+    </div>
+
+    <form name="pay" action="form_answer.html" method="POST" onsubmit="return validationForm()">
+        <div class="cart">
+            <div class="cart_name">
+                <h3 class="cart_h3_name">Your cart</h3>
+                <h3 class="cart_h3_number">3</h3>
+            </div>
+            <ul>
+                <li>
+                    <div class="li_name">Product name</div>
+                    <div class="li_charge">$12</div>
+                    <div class="li_description">Brief description</div>
+                </li>
+                <li>
+                    <div class="li_name">Second product</div>
+                    <div class="li_charge">$8</div>
+                    <div class="li_description">Brief description</div>
+                </li>
+                <li>
+                    <div class="li_name">Third item</div>
+                    <div class="li_charge">$5</div>
+                    <div class="li_description">Brief description</div>
+                </li>
+                <li class="active">
+                    <div class="li_name">Promo code</div>
+                    <div class="li_charge">-$5</div>
+                    <div class="li_description">EXAMPLECODE</div>
+                </li>
+                <li>
+                    <div class="li_name">Total (USD)</div>
+                    <div class="li_charge">$20</div>
+                </li>
+            </ul>
+
+            <div class="cart_promocode">
+                <input type="text" name="promo-code" id="input_promo-code" placeholder="Promo code"/>
+                <button type="button" name="promo-code">Redeem</button>
+            </div>
+        </div>
+
+        <div class="address">
+            <h3>Billing address</h3>
+
+            <div class="address_field col-6">
+                <label for="address_name_f">First name</label>
+                <input type="text" id="address_name_f" name="first_name" />
+            </div>
+            <div class="address_field col-6">
+                <label for="address_name_l">Last name</label>
+                <input type="text" id="address_name_l" name="last_name" />
+            </div>
+            <div class="address_field col-12">
+                <label for="">Date of birth</label>
+                <input type="date" id="address_birth" name="birthday"/>
+            </div>
+            <div class="address_field col-12">
+                <label for="address_username">Username</label>
+                <input type="text" id="address_username" name="username" placeholder="Username" />
+            </div>
+            <div class="address_field col-12">
+                <label for="address_email">Email (Optional)</label>
+                <input type="email" id="address_email" name="email" placeholder="you@example.com" />
+            </div>
+            <div class="address_field col-12">
+                <label for="address_1">Address</label>
+                <input type="text" id="address_1" name="address1" placeholder="1234 Main St" />
+            </div>
+            <div class="address_field col-12">
+                <label for="address_2">Address 2 (Optional)</label>
+                <input type="text" id="address_2" name="address2" placeholder="Apartment or suite" />
+            </div>
+            <div class="address_field col-5">
+                <label for="address_country_select">Country</label>
+                <select id="address_country_select" name="country">
+                <option>Choose...</option>
+                <option>United States</option>
+                </select>
+            </div>
+            <div class="address_field col-4">
+                <label for="address_state_select">State</label>
+                <select id="address_state_select" name="state">
+                <option>Choose...</option>
+                <option>California</option>
+                </select>
+            </div>
+            <div class="address_field col-3">
+                <label for="address_zip">Zip</label>
+                <input type="text" id="address_zip" name="zip" />
+            </div>
+            <label class="address_check col-12">
+                <input type="checkbox" id="address_checkbox1" name="check1" />
+                Shipping address is the same as my billing address
+            </label>
+            <label class="address_check col-12">
+                <input type="checkbox" id="address_checkbox2" name="check2" />
+                Save this information for next time
+            </label>
+        </div>
+
+        <hr/>
+
+        <div class="payment">
+            <h3>Payment</h3>
+            <div class="payment_radio">
+                <input type="radio" id="pay_credit-card" name="pay_radio"/>
+                <label for="pay_credit-card">Credit card</label>
+            </div>
+            <div class="payment_radio">
+                <input type="radio" id="pay_debit-card" name="pay_radio"/>
+                <label for="pay_debit-card">Debit card</label>
+            </div>
+            <div class="payment_radio">
+                <input type="radio" id="pay_paypal" name="pay_radio"/>
+                <label for="pay_paypal">PayPal</label>
+            </div>
+            <div class="payment_field col-6">
+                <label for="pay_cardname">Name on card</label>
+                <input type="text" id="pay_cardname" name="card_name"/>
+                <span>Full name as displayed on card</span>
+            </div>
+            <div class="payment_field col-6">
+                <label for="pay_cardnumber">Credit card number</label>
+                <input type="number" id="pay_cardnumber" name="card_number"/>
+            </div>
+            <div class="payment_field col-3">
+                <label for="pay_expiration">Expiration</label>
+                <input type="text" id="pay_expiration" name="card_expiration"/>
+            </div>
+            <div class="payment_field col-3">
+                <label for="pay_cvv">CVV</label>
+                <input type="text" id="pay_cvv" name="card_cvv"/>
+            </div>
+        </div>
+
+        <hr/>
+
+        <div class="reqeusts">
+            <h3>Requests</h3>
+            <textarea id="text_requests" name="requests" placeholder="Please enter requests."></textarea>
+        </div>
+
+        <hr/>
+
+            <input type="submit" id="continue" value="Continue to checkout"/>
+        </form>
+
+        <br/><br/>
+
+        <div class="footer">
+            2017–2022 Company Name
+            <br/>
+            <a href="./form_nostyle.html">Privacy</a>,
+            <a href="./form_nostyle.html">Terms</a>,
+            <a href="./form_nostyle.html">Support</a>
+        </div>
+</body>
+
+<script>
+    function validationForm(){
+        var pf_name = document.pay.first_name;
+        var pl_name = document.pay.last_name;
+        var birthday = document.pay.birthday;
+        var username = document.pay.username;
+        var email = document.pay.email;
+        var address1 = document.pay.address1;
+        var country = document.pay.country;
+        var state = document.pay.state;
+        var zip = document.pay.zip;
+        
+        var payment = document.pay.pay_radio;
+        var cardname = document.pay.card_name;
+        var cardnumber = document.pay.card_number;
+        var expiration = document.pay.card_expiration;
+        var cvv = document.pay.card_cvv;
+        var requests = document.pay.requests;
+
+        if(pf_name.value == ""){
+            alert("이름을 입력하세요: ");
+            pf_name.focus();
+            return false;
+        }
+        if(pl_name.value == ""){
+            alert("성씨를 입력하세요: ");
+            pl_name.focus();
+            return false;
+        }
+        if(birthday.value == ""){
+            alert("생일을 입력하세요: ");
+            birthday.focus();
+            return false;
+        }
+        if(username.value == ""){
+            alert("username을 입력하세요: ");
+            username.focus();
+            return false;
+        }
+        if(email.value == ""){
+            alert("이메일을 입력하세요: ");
+            email.focus();
+            return false;
+        }
+        if(address1.value == ""){
+            alert("주소를 입력하세요: ");
+            address1.focus();
+            return false;
+        }
+        if(country.value == "Choose..."){
+            alert("나라를 입력하세요: ");
+            country.focus();
+            return false;
+        }
+        if(state.value == "Choose..."){
+            alert("주를 입력하세요: ");
+            state.focus();
+            return false;
+        }
+        if(zip.value == ""){
+            alert("우편번호를 입력하세요: ");
+            zip.focus();
+            return false;
+        }
+        if(payment.value == ""){
+            alert("결제방법을 선택하세요: ");
+            payment.focus();
+            return false;
+        }
+        if(cardname.value == ""){
+            alert("카드이름을 입력하세요: ");
+            cardname.focus();
+            return false;
+        }
+        if(cardnumber.value == ""){
+            alert("카드번호를 입력하세요: ");
+            cardnumber.focus();
+            return false;
+        }
+        if(expiration.value == ""){
+            alert("유효기간을 입력하세요: ");
+            expiration.focus();
+            return false;
+        }
+        if(cvv.value == ""){
+            alert("카드 CVV를 입력하세요: ");
+            cvv.focus();
+            return false;
+        }
+        if(requests.value == ""){
+            alert("요청사항을 입력하세요: ");
+            requests.focus();
+            return false;
+        }
+    }
+</script>
+</html>

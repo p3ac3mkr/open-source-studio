@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week3 section6</title>
+</head>
+<body>
+    <script>
+        //alert("hello");
+        console.log("this is console.log");
+
+        let test_1 = 0;
+        //alert(test_1);
+        test_1 = "it was 0..."
+        //alert(test_1);
+
+        var test_2 = 1;
+        var test_3 = 2;
+
+        var test_2 = "var은 재선언이된다..."    // 재선언 가능
+        //alert(test_2);
+
+        const test3 = 0;    // 상수
+
+        let sum = 0;
+        for(let i=1; i<=50; i++){
+            sum += 1;
+        }
+        console.log(sum);
+
+        /*let time_a = 0;
+        setTimeout(
+            function(){alert("3초 지남?")}, 
+            3000
+        );
+        setInterval(
+            function(){console.log("시간이 너무 빨라요: "+time_a++)}, 
+            500
+        );*/
+
+        /*let result_confirm = confirm("Yes? or No?");
+        alert(result_confirm);*/
+
+        /*let prompt_result = prompt("입력하세요");
+        alert(prompt_result);*/
+
+        let innerWidth = window.innerWidth;
+        let outerWidth = window.outerHeight;
+        //alert(innerWidth+" | "+outerWidth);
+
+        //location.href = "https://www.google.com"
+
+        let obj = {
+            phone: "01043",
+            address: "pohang",
+            test1: function(){alert("test function")},
+            array1: [{a:"a"}, {a:"c"}]  //array of object
+        };   //object
+        obj.name = "name";  //put(in java), common uses
+        //alert(obj.name) //get(in java)
+        //alert(obj.address)
+
+        obj["title"] = "title"; // professor Kim uses
+        //alert(obj.title)
+
+        //obj.test1();    //object 내 함수 실행
+        //obj["test1"](); //it works too...
+    </script>
+
+
+    <!--덧셈 계산기-->
+    <h4>덧셈 계산기</h4>
+    <form>
+        <input type="number" size=2 id="input_num1"/>
+        +
+        <input type="number" size=2 id="input_num2"/>
+        <button onclick="listener_add()" type="button"> = </button>
+        <input type="number" size=2 id="input_result"/>
+        <br/>
+        <input type="reset" value="취소">
+    </form>
+
+    <script>
+        function listener_add(){
+            let input_num1 = document.getElementById("input_num1");
+            let input_num2 = document.getElementById("input_num2");
+
+            let sum = Number(input_num1.value) + Number(input_num2.value);
+
+            let input_result = document.getElementById("input_result");
+            input_result.value = sum;
+        }
+    </script>
+
+    <!---->
+    <div id="div_test" 
+    onclick="alert('clicked')" 
+    onmouseover="console.log('mouse in'); listener_mouseover();"
+    onmouseout="console.log('mouse out'); listener_mouseout();"
+    style="background-color: aqua;">
+
+    </div>
+
+    <script>
+            function listener_mouseover(){
+                let div_test = document.getElementById("div_test");
+                div_test.innerHTML = "hahaha";
+                div_test.style = "background-color: yellow";
+            }
+            function listener_mouseout(){
+                let div_test = document.getElementById("div_test");
+            }
+
+            let input_event = document.getElementsByClassName("input_event")[0];
+            input_event.addEventListener("keydown", function(){console.log("keydown")});
+            input_event.addEventListener("focus", function(){
+                input_event.stryle = "height:100px";
+            });
+        </script>
+
+    <!--keyboard event-->
+    input_event : <input type="text" id="input_text"/>
+
+</body>
+</html>
