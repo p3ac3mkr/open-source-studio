@@ -185,7 +185,7 @@
         Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.
     </div>
 
-    <form action="form_answer.html" method="POST">
+    <form name="pay" action="form_answer.html" method="POST">
         <div class="cart">
             <div class="cart_name">
                 <h3 class="cart_h3_name">Your cart</h3>
@@ -257,30 +257,36 @@
             </div>
             <div class="address_field col-5">
                 <label for="address_country_select">Country</label>
-                <select id="address_country_select">
-                <option>Choose...</option>
-                <option>United States</option>
+                <select id="address_country_select" name="country">
+                <optgroup>
+                    <option>Choose...</option>
+                    <option>United States</option>
+                    <option>South Korea</option>
+                </optgroup>
                 </select>
             </div>
             <div class="address_field col-4">
                 <label for="address_state_select">State</label>
-                <select id="address_state_select">
-                <option>Choose...</option>
-                <option>California</option>
+                <select id="address_state_select" name="state">
+                <optgroup>
+                    <option>Choose...</option>
+                    <option>California</option>
+                    <option>Seoul</option>
+                </optgroup>
                 </select>
             </div>
             <div class="address_field col-3">
                 <label for="address_zip">Zip</label>
-                <input type="text" id="address_zip" name="zip" />
+                <input type="text" id="address_zip" name="zip"/>
             </div>
-            <label class="address_check col-12">
-                <input type="checkbox" id="address_checkbox1" name="sameAsBilling" />
+            <div class="address_check col-12">
+                <input type="checkbox" id="address_checkbox1" name="check1"/>
                 Shipping address is the same as my billing address
-            </label>
-            <label class="address_check col-12">
-                <input type="checkbox" id="address_checkbox2" name="saveInfo" />
+            </div>
+            <div class="address_check col-12">
+                <input type="checkbox" id="address_checkbox2" name="check2"/>
                 Save this information for next time
-            </label>
+            </div>
         </div>
 
         <hr/>
@@ -322,7 +328,7 @@
 
         <div class="reqeusts">
             <h3>Requests</h3>
-            <textarea id="text_requests" placeholder="Please enter requests."></textarea>
+            <textarea id="text_requests" name="requests" placeholder="Please enter requests."></textarea>
         </div>
 
         <hr/>
