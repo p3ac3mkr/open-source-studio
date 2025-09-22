@@ -33,49 +33,55 @@
         margin: 0px;
         padding-left: 0px;
     }
-
-    
 </style>
-
-<body>
-    <h1>Dynamic Web page</h1>
-
-    <div class="div_contents">
-        <form id="generator" action="./form.html" method="get">
-            <div class="div_innercontents">
-                <div class="div_contents_input">
-                    <input type="text" id="input" name="input" placeholder="요소를 입력하세요: "/>
-                </div>
-                <div class="div_contents_submit">
-                    <input type="submit" value="추가"/>
-                    <input type="reset" value="삭제"/>
-                </div>
-            </div>
-        </form>
-
-        <div class="div_list">
-            <ul id="generated_list"></ul>
-        </div>
-    </div>
-</body>
 
 <script>
     window.onload = function(){
         const form = document.getElementById('generator');
+        const add = document.getElementById('add');
+        const remove = document.getElementById('remove');
         const input = document.getElementById('input');
         const ul = document.getElementById('generated_list');
 
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const l_element = input.value.trim();
-            const li = document.createElement('li');
+        add.addEventListener("click", function(){
+            const element = document.createElement('li');
+            element.textContent = input.value;
+            ul.appendChild(element);
 
-            li.textContent = l_element;
-            ul.appendChild(li);
+            form.reset();
+            input.focus();
+        });
+
+        remove.addEventListener("click", function(){
+            ul.innerHTML = "";
 
             form.reset();
             input.focus();
         });
     }
+
+    
 </script>
+
+<body>
+    <h1>Dynamic Web page</h1>
+
+    <div class="div_contents">
+        <div class="div_innercontents">
+            <form id="generator" action="./form.html" method="get">
+                <div class="div_contents_input">
+                    <input type="text" id="input" name="input" placeholder="요소를 입력하세요: "/>
+                </div>
+            </form>
+
+            <div class="div_contents_submit">
+                <button id="add">추가</button>
+                <button id="remove">삭제</button>
+            </div>
+        </div>
+        <div class="div_list">
+            <ul id="generated_list"></ul>
+        </div>
+    </div>
+</body>
 </html>
