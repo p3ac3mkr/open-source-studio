@@ -9,7 +9,7 @@ Coursework and assignments archive with source code and projects.
 ![Vercel](https://img.shields.io/github/deployments/p3ac3mkr/open-source-studio/Production?label=vercel)
 
 ## 🛠 Tech Stack
-HTML, CSS
+HTML, CSS, JavaScript, jQuery
 
 ## 📚 Contents
 - [HTML, CSS](./sources/html-css) — html tags, styles
