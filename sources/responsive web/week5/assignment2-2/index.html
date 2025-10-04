@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment2-2 index</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./my.css"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+
+<body>
+    <div class="div_header">
+        <div class="container header">
+            <h2>To read list</h2>
+        </div>
+        <div class="container hd_buttons">
+            <button type="button" class="btn btn-outline-secondary">account</button>
+            <button type="button" class="btn btn-outline-secondary">settings</button>
+        </div>
+    </div>
+
+    <hr id="hr_index"/>
+
+    <div class="div_tools">
+        <div class="container searchbar">
+            <form name="search" method="POST" class="d-flex align-items-center gap-2">
+                <input type="text" class="form-control w-80" placeholder="search">
+                <button type="button" class="btn btn-outline-secondary">search</button>
+            </form>
+        </div>
+
+        <div class="container add">
+            <button class="btn btn-secondary" type="button"><a href="./add.html">추가</a></button>
+        </div>
+    </div>
+
+    <div class="div_contents">
+        <div class="row gx-0">
+            <div class="col-2 col-xs-2 col-md-1 col-lg-1 p">#p</div>
+            <div class="col-4 col-xs-4 col-md-4 col-lg-4">title</div>
+            <div class="col-3 col-xs-3 col-md-2 col-lg-2 author">author</div>
+            <div class="col-3 col-xs-3 col-md-2 col-lg-2 publisher">publisher</div>
+            <div class="col-1 col-xs-2 col-md-1 col-lg-1 theme">theme</div>
+            <div class="col-1 col-xs-1 col-md-1 col-lg-1 year">year</div>
+            <div class="col-1 col-xs-1 col-md-1 col-lg-1 started">started</div>
+        </div>
+        <div class="row gx-0">
+            <div class="col-2 col-xs-2 col-md-1 col-lg-1 p">1</div>
+            <div class="col-4 col-xs-4 col-md-4 col-lg-4 title">어린아이의 일을 버리라</div>
+            <div class="col-3 col-xs-3 col-md-2 col-lg-2 author">데이비드 A.<br/>씨맨즈</div>
+            <div class="col-3 col-xs-3 col-md-2 col-lg-2 publisher">두란노</div>
+            <div class="col-1 col-xs-2 col-md-1 col-lg-1 theme">내면</div>
+            <div class="col-1 col-xs-1 col-md-1 col-lg-1 year">2025</div>
+            <div class="col-1 col-xs-1 col-md-1 col-lg-1 started">10-01</div>
+        </div>
+        <div class="row gx-0">
+            <div class="col-2 col-xs-2 col-md-1 col-lg-1 p">2</div>
+            <div class="col-4 col-xs-4 col-md-4 col-lg-4 title">제자도</div>
+            <div class="col-3 col-xs-3 col-md-2 col-lg-2 author">존 스토트</div>
+            <div class="col-3 col-xs-3 col-md-2 col-lg-2 publisher">IVP</div>
+            <div class="col-1 col-xs-2 col-md-1 col-lg-1 theme">제자도</div>
+            <div class="col-1 col-xs-1 col-md-1 col-lg-1 year">2010</div>
+            <div class="col-1 col-xs-1 col-md-1 col-lg-1 started">10-01</div>
+        </div>
+        <div class="row gx-0">
+            <div class="col-2 col-xs-2 col-md-1 col-lg-1 p">3</div>
+            <div class="col-4 col-xs-4 col-md-4 col-lg-4 title">이교도 선교방법론(증보판)</div>
+            <div class="col-3 col-xs-3 col-md-2 col-lg-2 author">윌리엄 캐리</div>
+            <div class="col-3 col-xs-3 col-md-2 col-lg-2 publisher">야스미디어</div>
+            <div class="col-1 col-xs-2 col-md-1 col-lg-1 theme">선교</div>
+            <div class="col-1 col-xs-1 col-md-1 col-lg-1 year">2021</div>
+            <div class="col-1 col-xs-1 col-md-1 col-lg-1 started">10-01</div>
+        </div>
+        <div class="row gx-0">
+            <div class="col-2 col-xs-2 col-md-1 col-lg-1 p">4</div>
+            <div class="col-4 col-xs-4 col-md-4 col-lg-4 title">세계 선교 역사</div>
+            <div class="col-3 col-xs-3 col-md-2 col-lg-2 author">J. 하버트 케인</div>
+            <div class="col-3 col-xs-3 col-md-2 col-lg-2 publisher">CLC</div>
+            <div class="col-1 col-xs-2 col-md-1 col-lg-1 theme">선교</div>
+            <div class="col-1 col-xs-1 col-md-1 col-lg-1 year">2020</div>
+            <div class="col-1 col-xs-1 col-md-1 col-lg-1 started">10-01</div>
+        </div>
+        <div class="row gx-0">
+            <div class="col-2 col-xs-2 col-md-1 col-lg-1 p">5</div>
+            <div class="col-4 col-xs-4 col-md-4 col-lg-4 title">랄프 윈터의 기독교 문명운동사</div>
+            <div class="col-3 col-xs-3 col-md-2 col-lg-2 author">임윤택</div>
+            <div class="col-3 col-xs-3 col-md-2 col-lg-2 publisher">예수전도단</div>
+            <div class="col-1 col-xs-2 col-md-1 col-lg-1 theme">선교운동</div>
+            <div class="col-1 col-xs-1 col-md-1 col-lg-1 year">2013</div>
+            <div class="col-1 col-xs-1 col-md-1 col-lg-1 started">10-01</div>
+        </div>
+        <div class="row gx-0">
+            <div class="col-2 col-xs-2 col-md-1 col-lg-1 p">6</div>
+            <div class="col-4 col-xs-4 col-md-4 col-lg-4 title">하나님의 이름을 새기다</div>
+            <div class="col-3 col-xs-3 col-md-2 col-lg-2 author">카먼 조이 아임스</div>
+            <div class="col-3 col-xs-3 col-md-2 col-lg-2 publisher">성서유니온선교회</div>
+            <div class="col-1 col-xs-2 col-md-1 col-lg-1 theme">말씀</div>
+            <div class="col-1 col-xs-1 col-md-1 col-lg-1 year">2025</div>
+            <div class="col-1 col-xs-1 col-md-1 col-lg-1 started">10-01</div>
+        </div>
+        <div class="row gx-0">
+            <div class="col-2 col-xs-2 col-md-1 col-lg-1 p">7</div>
+            <div class="col-4 col-xs-4 col-md-4 col-lg-4 title">유기적 성경공부</div>
+            <div class="col-3 col-xs-3 col-md-2 col-lg-2 author">진 에드워드<br/>비스 주니어</div>
+            <div class="col-3 col-xs-3 col-md-2 col-lg-2 publisher">대장간</div>
+            <div class="col-1 col-xs-2 col-md-1 col-lg-1 theme">말씀</div>
+            <div class="col-1 col-xs-1 col-md-1 col-lg-1 year">2019</div>
+            <div class="col-1 col-xs-1 col-md-1 col-lg-1 started">10-01</div>
+        </div>
+        <div class="row gx-0">
+            <div class="col-2 col-xs-2 col-md-1 col-lg-1 p">8</div>
+            <div class="col-4 col-xs-4 col-md-4 col-lg-4 title">성령의 능력으로 사역하라</div>
+            <div class="col-3 col-xs-3 col-md-2 col-lg-2 author">잽 브래드포드 롱,<br/>더글러스 맥머리</div>
+            <div class="col-3 col-xs-3 col-md-2 col-lg-2 publisher">홍성사</div>
+            <div class="col-1 col-xs-2 col-md-1 col-lg-1 theme">성령</div>
+            <div class="col-1 col-xs-1 col-md-1 col-lg-1 year">1999</div>
+            <div class="col-1 col-xs-1 col-md-1 col-lg-1 started">10-01</div>
+        </div>
+        <div class="row gx-0">
+            <div class="col-2 col-xs-2 col-md-1 col-lg-1 p">9</div>
+            <div class="col-4 col-xs-4 col-md-4 col-lg-4 title">아버지의 빈자리</div>
+            <div class="col-3 col-xs-3 col-md-2 col-lg-2 author">도널드 밀러</div>
+            <div class="col-3 col-xs-3 col-md-2 col-lg-2 publisher">IVP</div>
+            <div class="col-1 col-xs-2 col-md-1 col-lg-1 theme">내면</div>
+            <div class="col-1 col-xs-1 col-md-1 col-lg-1 year">2014</div>
+            <div class="col-1 col-xs-1 col-md-1 col-lg-1 started">10-01</div>
+        </div>
+        <div class="row gx-0" id="row-bottoms">
+            <div class="col-2 col-xs-2 col-md-1 col-lg-1 p">10</div>
+            <div class="col-4 col-xs-4 col-md-4 col-lg-4 title">잊혀진 제자도</div>
+            <div class="col-3 col-xs-3 col-md-2 col-lg-2 author">달라스 윌라드</div>
+            <div class="col-3 col-xs-3 col-md-2 col-lg-2 publisher">복있는사람</div>
+            <div class="col-1 col-xs-2 col-md-1 col-lg-1 theme">제자도</div>
+            <div class="col-1 col-xs-1 col-md-1 col-lg-1 year">2021</div>
+            <div class="col-1 col-xs-1 col-md-1 col-lg-1 started">10-01</div>
+        </div>
+    </div>
+</body>
+
+<script>
+    $(".col-4.title").on("click", function(){
+        window.location.href="./view.html";
+    });
+</script>
+
+</html>

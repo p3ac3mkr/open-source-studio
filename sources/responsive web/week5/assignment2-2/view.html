@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment2-2 view</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./my.css"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <div class="container view_header">
+        <h2>My Book Cover</h2>
+        <h6>example view page</h6>
+    </div>
+    <div class="div_bookcover">
+        <img src="https://edit.org/images/cat/book-covers-big-2019101610.jpg" class="rounded mx-auto"/>
+    </div>
+    
+    <hr id="hr_view"/>
+
+    <div class="container align-items-center v_contents">
+        <div class="row mb-4 v_row">
+            <div class="col-5 v_col" id="view_author"><h5>author: author example</h5></div>
+            <div class="col-2 v_col"></div>
+            <div class="col-5 v_col" id="view_theme"><h5>theme: theme example</h5></div>
+        </div>
+        <div class="row mb-4 v_row">
+            <div class="col-5 v_col" id="view_publisher"><h5>publisher: publisher example</h5></div>
+            <div class="col-2 v_col"></div>
+            <div class="col-5 v_col" id="view_year"><h5>year: published year example</h5></div>
+        </div>
+        <div class="row mb-4 v_row">
+            <div class="col-5 v_col" id="view_started"><h5>started date: started date example</h5></div>
+            <div class="col-2 v_col"></div>
+            <div class="col-5 v_col" id="view_goal"><h5>goal date: goal date example</h5></div>
+        </div>
+
+        <div class="div_v_buttons">
+            <div class="btn-group view_indexbtn">
+                <button class="btn btn-secondary" id="index">목록</button>
+            </div>
+            <div class="btn-group align-items-right view_btns">
+                <button class="btn btn-secondary" id="edit">수정</button>
+                <button class="btn btn-secondary" id="delete">삭제</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    $("#index").on("click", function(){
+        window.location.href="./index.html"
+    });
+    $("#edit").on("click", function(){
+        window.location.href="./edit.html"
+    });
+    $("#delete").on("click", function(){
+        confirm("게시물을 삭제할까요?")
+    });
+</script>
+
+</html>
