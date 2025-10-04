@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment2-2 add</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./my.css"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+
+<body>
+    <div class="container add_header">
+        <h2>Add a Book to Read</h2>
+    </div>
+
+    <div class="add_form">
+        <form name="add_book" method="POST" onsubmit="validation()">
+            <div class="row">
+                <div class="input-group mb-5" id="add_bookname">
+                    <label class="form-label" for="book_name">name of the book</label>
+                    <div class="col-12 name"><input type="text" class="form-control" id="book_name" placeholder="name"/></div>
+                </div>
+                <div class="input-group mb-5" id="add_bookinfo1">
+                    <div class="col-12 col-md-6 col-lg-6 label"><label class="form-label" for="book_theme">theme of the book</label></div>
+                    <div class="col-12 col-md-6 col-lg-6 label"><label class="form-label" for="book_author">author of the book</label></div>
+                    <div class="col-12 col-md-6 col-lg-6 info"><input type="text" class="form-control" id="book_theme" placeholder="theme"/></div>
+                    <div class="col-12 col-md-6 col-lg-6 info"><input type="text" class="form-control" id="book_author" placeholder="author"/></div>
+                </div>
+                <div class="input-group mb-5" id="add_bookinfo2">
+                    <div class="col-12 col-md-6 col-lg-6 label"><label class="form-label" for="book_publisher">publisher of the book</label></div>
+                    <div class="col-12 col-md-6 col-lg-6 label"><label class="form-label" for="book_year">published year</label></div>
+                    <div class="col-12 col-md-6 col-lg-6 info"><input type="text" class="form-control" id="book_publisher" placeholder="publisher"/></div>
+                    <div class="col-12 col-md-6 col-lg-6 info"><input type="text" class="form-control" id="book_year" placeholder="published in"/></div>
+                </div>
+                <div class="input-group" id="add_bookinfo3">
+                    <div class="col-12 col-md-6 col-lg-6 label"><label class="form-label" for="book_priority">priority of the book</label></div>
+                    <div class="col-12 col-md-6 col-lg-6 label"><label class="form-label" for="book_started">started date</label></div>
+                    <div class="col-12 col-md-6 col-lg-6 info"><input type="number" class="form-control" id="book_priority" placeholder="priority"/></div>
+                    <div class="col-12 col-md-6 col-lg-6 info"><input type="date" class="form-control" id="book_started"/></div>
+                </div>
+                <div class="btn-group" id="add_buttons">
+                    <div class="col-4 button" id="div_btn_cancel"><button type="button" class="btn btn-secondary" id="btn_cancel" onclick="backToIndex()">취소</button></div>
+                    <div class="col-4 button"></div>
+                    <div class="col-4 button" id="div_btn_add"><button type="submit" class="btn btn-secondary" id="btn_add">확인</button></div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+<script>
+    function validation(){
+        let b_name = $("#book_name").val();
+        let b_author = $("#book_author").val();
+        let b_publisher = $("#book_publisher").val();
+        let b_priority = $("#book_priority").val();
+
+        if(b_name == ""){
+            alert("Name of the book is required");
+        }
+        else if(b_author == ""){
+            alert("Author of the book is required");
+        }
+        else if(b_publisher == ""){
+            alert("Publisher of the book is required");
+        }
+        else if(b_priority == ""){
+            alert("Priority of the book is required");
+        }
+        else{
+            alert("게시물이 추가됩니다");
+        }
+    }
+
+    function backToIndex(){
+        window.location.href="./index.html";
+    }
+</script>
+
+</html>
