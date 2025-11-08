@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment4-1 index</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./my.css"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+
+<body>
+    <div class="div_header">
+        <div class="container header">
+            <h2>To read list</h2>
+        </div>
+        <div class="container hd_buttons">
+            <button type="button" class="btn btn-outline-secondary">account</button>
+            <button type="button" class="btn btn-outline-secondary">settings</button>
+        </div>
+    </div>
+
+    <hr id="hr_index"/>
+
+    <div class="div_tools">
+        <div class="container searchbar">
+            <form name="search" method="POST" class="d-flex align-items-center gap-2">
+                <input type="text" class="form-control w-80" placeholder="search">
+                <button type="button" class="btn btn-outline-secondary">search</button>
+            </form>
+        </div>
+
+        <div class="container add">
+            <button class="btn btn-secondary" type="button"><a href="./add.html">추가</a></button>
+            <button class="btn btn-secondary" type="button"><a href="./edit.html">수정</a></button>
+            <button class="btn btn-secondary" type="button"><a href="./delete.html">삭제</a></button>
+        </div>
+    </div>
+
+    <div class="div_contents" id="div_contents">
+        <div class="row gx-0">
+            <div class="col-2 col-xs-2 col-md-1 col-lg-1 p">#p</div>
+            <div class="col-4 col-xs-4 col-md-4 col-lg-4">title</div>
+            <div class="col-3 col-xs-3 col-md-2 col-lg-2 author">author</div>
+            <div class="col-3 col-xs-3 col-md-2 col-lg-2 publisher">publisher</div>
+            <div class="col-1 col-xs-2 col-md-1 col-lg-1 theme">theme</div>
+            <div class="col-1 col-xs-1 col-md-1 col-lg-1 year">year</div>
+            <div class="col-1 col-xs-1 col-md-1 col-lg-1 started">started</div>
+        </div>
+    </div>
+</body>
+
+<script>
+    $(".col-4.title").click(function(){
+        window.location.href="./view.html";
+    });
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET","http://localhost:3000/books");
+    xhr.setRequestHeader("content-type","application/json");
+    xhr.send();
+
+    xhr.onload = () => {
+        if (xhr.status === 200) {
+            let res = JSON.parse(xhr.response);
+            //alert(JSON.stringify(res));
+            //$("#div_contents").html("");
+            res.forEach(function(each){
+                $("#div_contents").append(`<div class="row gx-0" id="row-bottoms">
+                    <div class="col-2 col-xs-2 col-md-1 col-lg-1 p">${each.priority}</div>
+                    <div class="col-4 col-xs-4 col-md-4 col-lg-4 title">${each.name}</div>
+                    <div class="col-3 col-xs-3 col-md-2 col-lg-2 author">${each.author}</div>
+                    <div class="col-3 col-xs-3 col-md-2 col-lg-2 publisher">${each.publisher}</div>
+                    <div class="col-1 col-xs-2 col-md-1 col-lg-1 theme">${each.theme}</div>
+                    <div class="col-1 col-xs-1 col-md-1 col-lg-1 year">${each.year}</div>
+                    <div class="col-1 col-xs-1 col-md-1 col-lg-1 started">${each.started}</div>
+                    </div>`);
+            });
+        } else {
+            console.log(xhr.status, xhr.statusText);
+        }
+    }
+</script>
+
+</html>
