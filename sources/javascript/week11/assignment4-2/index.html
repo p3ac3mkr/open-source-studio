@@ -110,7 +110,7 @@
     });
 
     const xhr = new XMLHttpRequest();
-    xhr.open("GET","http://localhost:3000/books");
+    xhr.open("GET","https://6918702421a96359487009b4.mockapi.io/books/");
     xhr.setRequestHeader("content-type","application/json");
     xhr.send();
 
@@ -170,7 +170,7 @@
 
     $("#edit_refresh").click(function(){
         const xhr = new XMLHttpRequest();
-        xhr.open("GET","http://localhost:3000/books/");
+        xhr.open("GET","https://6918702421a96359487009b4.mockapi.io/books/");
         xhr.setRequestHeader("content-type","application/json");
         xhr.send();
         xhr.onload = () => {
@@ -205,7 +205,7 @@
     $("#add-book-btn").click(function(){
         alert("게시물을 추가합니다.");
         const xhr = new XMLHttpRequest();
-        xhr.open("POST","http://localhost:3000/books");
+        xhr.open("POST","https://6918702421a96359487009b4.mockapi.io/books/");
         xhr.setRequestHeader("content-type","application/json");
 
         let data = { priority: $("#book_priority").val(), name: $("#book_name").val(), author: $("#book_author").val(), theme: $("#book_theme").val(), publisher: $("#book_publisher").val(), year: $("#book_year").val(), started: $("#book_started").val() };
@@ -222,7 +222,7 @@
     $("#edit-book-btn").click(function(){
         alert("게시물을 수정합니다.");
         const xhr = new XMLHttpRequest();
-        xhr.open("PUT","http://localhost:3000/books/" + $("#book_to_edit").val());
+        xhr.open("PUT","https://6918702421a96359487009b4.mockapi.io/books/" + $("#book_to_edit").val());
         xhr.setRequestHeader("content-type","application/json");
         let data = { priority: $("#book_priority").val(), name: $("#book_name").val(), author: $("#book_author").val(), theme: $("#book_theme").val(), publisher: $("#book_publisher").val(), year: $("#book_year").val(), started: $("#book_started").val() };
         xhr.send(JSON.stringify(data));
@@ -238,7 +238,7 @@
     $("#delete-book-btn").click(function(){
         alert("게시물을 삭제합니다.");
         const xhr = new XMLHttpRequest();
-        xhr.open("DELETE","http://localhost:3000/books/" + $("#book_to_edit").val());
+        xhr.open("DELETE","https://6918702421a96359487009b4.mockapi.io/books/" + $("#book_to_edit").val());
         xhr.setRequestHeader("content-type","application/json");
         xhr.send();
         xhr.onload = () => {
